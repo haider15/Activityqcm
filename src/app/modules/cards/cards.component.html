@@ -1,0 +1,39 @@
+
+<mat-card class="example-card">
+  <div class="card__header">
+    <a href="/posts" style="text-decoration: none;">   <img
+    src="https://techblog.sdstudio.top/wp-content/uploads/2021/09/ba11d056cec27254d89b310745e4071b-1-750x430.png"
+    alt="card__image" class="card__image" width="600"></a>
+  </div>
+  <mat-card-content>
+   
+    <h4>React</h4>
+    <div [ngClass]="{'limitTextHeight': isReadMore}">
+
+     {{text}}
+  </div>
+  <u><a (click)="showText()">
+      {{ isReadMore ? 'Read More': 'Read Less' }}
+  </a></u>
+  </mat-card-content>
+
+  <mat-card-footer></mat-card-footer>
+
+
+
+    <pre> </pre>
+
+    <div class="edit">
+      <span mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+        <a href="/edit"style="color: blue;"><mat-icon >edit</mat-icon></a>
+      </span> </div>
+      
+     <div class="delete" > <span  mat-mini-fab color="accent" aria-label="Example icon button with a delete icon">
+        <a href="" style="color: red;"> <mat-icon>delete</mat-icon></a>
+      </span>
+    </div>
+
+
+</mat-card>
+<mat-divider></mat-divider>
+<pre>  </pre>

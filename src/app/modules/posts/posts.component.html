@@ -1,0 +1,22 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"  hideToggle *ngFor="let o of Questions ;let i=index;" >
+        <mat-expansion-panel-header >
+            <mat-panel-title  >
+                Question n°{{i+1}}<input type="text" class="form-control">
+           </mat-panel-title>   
+           <mat-icon>add</mat-icon> 
+        </mat-expansion-panel-header>
+        <input type="text" class="form-control">
+        <input type="text" class="form-control">
+        <input type="text" class="form-control">
+        
+    </mat-expansion-panel>
+    
+    <button (click)="print(init)" ><mat-icon >add</mat-icon></button>
+    <button (click)="printi(init)" ><mat-icon >moins</mat-icon></button>
+
+
+
+
+    
+</mat-accordion>
