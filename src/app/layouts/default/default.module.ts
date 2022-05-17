@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditComponent } from 'src/app/modules/edit/edit.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddqcmComponent } from 'src/app/modules/addqcm/addqcm.component';
+import { ReponseComponent } from 'src/app/modules/reponse/reponse.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddqcmComponent } from 'src/app/modules/addqcm/addqcm.component';
     CardsComponent,
     NewlangageComponent,
     EditComponent,
-    AddqcmComponent
+    AddqcmComponent,
+    ReponseComponent
   ],
   imports: [
     CommonModule,

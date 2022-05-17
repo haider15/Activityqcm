@@ -1,0 +1,14 @@
+<div class="" *ngFor="let o of reponse ;let i=index;">
+    answer n°{{i+1}} <br>
+    <div class="rep">
+        <input type="checkbox"><input type="text" class="form-control">
+    </div>
+
+
+</div>
+<button (click)="prints(resp)">
+    <mat-icon>add</mat-icon>
+</button>
+<button (click)="printis(resp)">
+    <mat-icon>moins</mat-icon>
+</button>
