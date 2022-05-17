@@ -1,15 +1,18 @@
 <mat-accordion>
-    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"  hideToggle *ngFor="let o of Questions ;let i=index;" >
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"  hideToggle *ngFor="let o of Questions ;let i=index;"  >
         <mat-expansion-panel-header >
-            <mat-panel-title  >
+            <mat-panel-title   >
                 Question n°{{i+1}}<input type="text" class="form-control">
            </mat-panel-title>   
            <mat-icon>add</mat-icon> 
         </mat-expansion-panel-header>
-        <input type="text" class="form-control">
-        <input type="text" class="form-control">
-        <input type="text" class="form-control">
+        <div class="rep" *ngFor="let o of reponse ;let i=index;" >
+        answer n°{{i+1}}<input type="text" class="form-control">
+   
         
+    </div>  
+    <button (click)="prints(resp)" ><mat-icon >add</mat-icon></button>
+        <button (click)="printis(resp)" ><mat-icon >moins</mat-icon></button> 
     </mat-expansion-panel>
     
     <button (click)="print(init)" ><mat-icon >add</mat-icon></button>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newlangage.component.scss']
 })
 export class NewlangageComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
