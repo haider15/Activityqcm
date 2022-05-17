@@ -7,6 +7,7 @@ export interface PeriodicElement {
   cin: number;
   moy: number;
   pass: string;
+ 
 
 }
 
@@ -39,6 +40,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./addqcm.component.scss']
 })
 export class AddqcmComponent implements AfterViewInit {
+  n="name";
+  c="cin";
+  m="moy";
+  p="pass"
   displayedColumns: string[] = ['cin', 'name', 'moy', 'pass'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
