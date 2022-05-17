@@ -8,7 +8,7 @@
 <div  >
     
     <div class="cards" *ngFor=" let i of c " >
-       <app-cards  *ngFor=" let i of l " ></app-cards><br>
+       <app-cards  src="{{carte[i].src}}" description="{{carte[i].description}}" name="{{carte[i].name}}" *ngFor=" let i of l " ></app-cards><br>
     </div>
    
 
