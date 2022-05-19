@@ -1,15 +1,16 @@
-
 <button mat-icon-button>
-    <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon><a href="/newlangages">add a new language</a>
-  </button>
+  <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon><a href="/newlangages">add a new
+    language</a>
+</button>
 
+
+<mat-grid-list cols="3" rowHeight="10:15">
   
-
-<div  >
+  <mat-grid-tile *ngFor=" let k of carte ; let i=index;">
     
-    <div class="cards" *ngFor=" let i of c " >
-       <app-cards  src="{{carte[i].src}}" description="{{carte[i].description}}" name="{{carte[i].name}}" *ngFor=" let i of l " ></app-cards><br>
-    </div>
-   
+    <app-cards src="{{carte[i].src}}" description="{{carte[i].description}}" name="{{carte[i].name}}"></app-cards>
+    <pre>
+    </pre>
+  </mat-grid-tile>
 
-</div>
+</mat-grid-list>

@@ -23,8 +23,8 @@ export class PostsComponent implements OnInit {
   }
 
   print(n:number){
-    this.Questions=Array(Number(n+1))
-    this.init=this.init+1;
+    if(this.init<40){this.Questions=Array(Number(n+1))
+    this.init=this.init+1;}
   }
   
   printi(n:number){

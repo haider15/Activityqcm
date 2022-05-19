@@ -17,6 +17,7 @@ import { EditComponent } from 'src/app/modules/edit/edit.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddqcmComponent } from 'src/app/modules/addqcm/addqcm.component';
 import { ReponseComponent } from 'src/app/modules/reponse/reponse.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReponseComponent } from 'src/app/modules/reponse/reponse.component';
     NewlangageComponent,
     EditComponent,
     AddqcmComponent,
-    ReponseComponent
+    ReponseComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,8 @@ import { ReponseComponent } from 'src/app/modules/reponse/reponse.component';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatGridListModule
   ],
   providers: [
     DashboardService
