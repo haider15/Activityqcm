@@ -6,7 +6,7 @@ choice:{
 },
 istrue:{
     type:Boolean,
-    required:true
+    //required:true
 },
 questions:{
     type:mongoose.SchemaTypes.ObjectId,

@@ -25,7 +25,7 @@ const getlanguages = (request, response) => {
 }
 
 const createlanguage = (request, response) => {
-    console.log(request.body.name)
+    
     Cont.create({
         name: request.body.name,
         src: request.body.src,

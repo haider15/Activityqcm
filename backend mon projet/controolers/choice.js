@@ -25,7 +25,7 @@ const getchoice = (request, response) => {
 }
 
 const createchoice = (request, response) => {
-    console.log(request.body.name)
+    
     Cont.create({
         choice: request.body.choice,
         img: request.body.img,
@@ -124,6 +124,7 @@ const readchoice = (request, response) => {
             response
                 .status(200)
                 .json(choice);
+                
 
         });
     }
