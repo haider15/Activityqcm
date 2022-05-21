@@ -33,4 +33,7 @@ process.on('SIGINT', () => {
     });
 });
 
-require('./contacts');
+require('./language');
+require('./questions');
+require('./choice');
+

@@ -1,28 +1,42 @@
 var express = require('express');
+
 var router = express.Router();
 
-const {readContact, createContact, deleteContact, getContacts, updateContact} = require('../controllers/contacts');
-const {createAddress, updateAddress, deleteAddress, readAddress, getAllAddress} = require('../controllers/address');
+const { getlanguages, createlanguage , updatelanguage ,deletelanguage,readlanguage } = require('../controolers/language');
+const { getquestions, createquestions ,deletequestions,updatequestions ,readquestions } = require('../controolers/questions');
+const { getchoice, createchoice ,deletechoice,updatechoice ,readchoice } = require('../controolers/choice');
 
-router.route('/contacts')
-    .get(getContacts)
-    .post(createContact);
+//language
+router.route('/language')
+    .get(getlanguages)
+    .post(createlanguage);
+
+    router.route('/language/:languageid')
+    .get(readlanguage)
+    .put(updatelanguage)
+    .delete(deletelanguage);
+
+//question 
+router.route('/questions')
+    .get(getquestions)
+    .post(createquestions);
+
+   router.route('/questions/:questionsid')
+   .get(readquestions)
+    .put(updatequestions)
+    .delete(deletequestions);
 
 
-//read, update and delete specific contact
-router.route('/contacts/:contactid')
-    .get(readContact)
-    .put(updateContact)
-    .delete(deleteContact);
+//choice
 
-// define route for address
-router.route('/contacts/:contactid/address')
-    .get(getAllAddress)
-    .post(createAddress);
+router.route('/choice')
+    .get(getchoice)
+    .post(createchoice);
 
-router.route('/contacts/:contactid/address/:addressid')
-    .get(readAddress)
-    .put(updateAddress)
-    .delete(deleteAddress);
+   router.route('/choice/:choiceid')
+   .get(readchoice)
+    .put(updatechoice)
+    .delete(deletechoice);    
+
 
 module.exports = router;

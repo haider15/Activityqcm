@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const LanguageShema =new mongoose.Schema({
 name:{
-type :string,
-require:true
+type :String,
+required:true
 },
 
 version:{
@@ -26,7 +26,7 @@ nbrQuestion:{
 },
 
 passSccore:{
-    type:sccore,
+    type:Number,
     "default":70
 }
 

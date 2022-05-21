@@ -1,17 +1,20 @@
 const mongoose=require("mongoose");
-const langageSchema=mongoose.Schema({
-choice:{String,
-required:true},
-istrue:{type:Boolean,
+const choiceSchema=mongoose.Schema({
+choice:{
+    type:String,
     required:true
 },
-question    :{
-    type:Schema.Types.ObjectId,
-    ref:"question"
+istrue:{
+    type:Boolean,
+    required:true
 },
-img:String
-
-
-
+questions:{
+    type:mongoose.SchemaTypes.ObjectId,
+    ref:'questions'
+},
+img:{
+    type:String,
+    required:true
+}
 })
-mongoose.model("langage",langageSchema)
+mongoose.model("choice",choiceSchema)
