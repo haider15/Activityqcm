@@ -31,12 +31,12 @@ router.route('/questions')
 
 router.route('/choice')
     .get(getchoice)
-    .post(createchoice);
+   .post(createchoice);
 
-   router.route('/choice/:choiceid')
-   .get(readchoice)
+ router.route('/choice/:choiceid')
+    .get(readchoice)
     .put(updatechoice)
-    .delete(deletechoice);    
+    .delete(deletechoice);   
 
 
 module.exports = router;

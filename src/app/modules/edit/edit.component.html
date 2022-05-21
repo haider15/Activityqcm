@@ -1,49 +1,48 @@
-
 <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"></label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"></label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="g">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"></label>
-    <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label"></label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description"></textarea>
-  </div><br>
-  <mat-accordion>
-    <mat-expansion-panel hideToggle>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="g">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label"></label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description"></textarea>
+</div><br>
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle
+      *ngFor="let o of Questions ;let i=index;">
       <mat-expansion-panel-header>
-        <mat-panel-title>
-          This is the expansion title
-        </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
+          <mat-panel-title>
+              Question n°{{i+1}}<input type="text" class="form-control">
+          </mat-panel-title>
+         <button> <mat-icon style="color: blue;">edit</mat-icon></button><button><mat-icon style="color: red;">delete</mat-icon></button>
       </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{panelOpenState ? 'open' : 'closed'}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
-  </mat-accordion>
-  
-  <button class="butt" mat-raised-button color="primary">edit&nbsp;   <mat-icon>done</mat-icon></button>
-  <pre>   
+      <app-reponse></app-reponse>
+  </mat-expansion-panel>
+
+  <button (click)="print(init)">
+      <mat-icon>add</mat-icon>
+  </button>
+  <button (click)="printi(init)">
+      <mat-icon>moins</mat-icon>
+  </button>
 
 
-    
+
+
+
+</mat-accordion>
+
+
+<button class="butt" mat-raised-button color="primary">edit&nbsp; <mat-icon>done</mat-icon></button>
+<pre>
+
+
+
   </pre>
