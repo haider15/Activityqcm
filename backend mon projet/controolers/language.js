@@ -3,17 +3,17 @@ const Cont = mongoose.model('language');
 
 const getlanguages = (request, response) => {
     Cont.find()
-        .exec((error, language)=>{
-            if(error){
+        .exec((error, language) => {
+            if (error) {
                 response
                     .status(400)
                     .json(error);
-            }else{
-                if(language){
+            } else {
+                if (language) {
                     response
                         .status(201)
                         .json(language);
-                }else{
+                } else {
                     return response
                         .status(404)
                         .json({
@@ -25,7 +25,7 @@ const getlanguages = (request, response) => {
 }
 
 const createlanguage = (request, response) => {
-    
+
     Cont.create({
         name: request.body.name,
         src: request.body.src,
@@ -33,7 +33,7 @@ const createlanguage = (request, response) => {
         description: request.body.description,
         nbrQuestion: request.body.nbrQuestion,
         passSccore: request.body.passSccore,
-    },(error, language)=>{
+    }, (error, language) => {
         if (error) {
             response
                 .status(400)
@@ -52,7 +52,7 @@ const updatelanguage = (request, response) => {
     const languageid = request.params.languageid;
 
     Cont.findById(languageid)
-        .exec((error, language) =>{
+        .exec((error, language) => {
             if (!language) {
                 return response
                     .status(404)
@@ -64,7 +64,7 @@ const updatelanguage = (request, response) => {
                     .status(400)
                     .json(error);
             }
-            language.name= request.body.name;
+            language.name = request.body.name;
             language.version = request.body.version;
             language.src = request.body.src;
             language.description = request.body.description;
@@ -85,27 +85,28 @@ const updatelanguage = (request, response) => {
 }
 
 const deletelanguage = (request, response) => {
-    const {languageid} = request.params;
+    const { languageid } = request.params;
     if (languageid) {
         Cont
             .findByIdAndRemove(languageid)
             .exec((error, language) => {
-                    if (error) {
-                        return response
-                            .status(404)
-                            .json(error);
-                    }
-                    response
-                        .status(204)
-                        .json(null);
+                if (error) {
+                    return response
+                        .status(404)
+                        .json(error);
                 }
+                response
+                    .status(204)
+                    .json(null);
+            }
             );
     } else {
         response
             .status(404)
             .json(
-                {"message": "No language"
-            });
+                {
+                    "message": "No language"
+                });
     }
 }
 
@@ -130,7 +131,14 @@ const readlanguage = (request, response) => {
                 .json(language);
 
         });
-    }
+}
+
+
+
+
+
+
+
 
 
 
@@ -139,6 +147,9 @@ module.exports = {
     createlanguage,
     updatelanguage,
     deletelanguage,
-    readlanguage
+    readlanguage,
    
+   
+
+
 }

@@ -2,8 +2,8 @@ var express = require('express');
 
 var router = express.Router();
 
-const { getlanguages, createlanguage , updatelanguage ,deletelanguage,readlanguage } = require('../controolers/language');
-const { getquestions, createquestions ,deletequestions,updatequestions ,readquestions } = require('../controolers/questions');
+const { getlanguages, createlanguage , updatelanguage ,deletelanguage,readlanguage, } = require('../controolers/language');
+const { getquestions, createquestions,updatequestions,readquestions ,deletequestions } = require('../controolers/questions');
 const { getchoice, createchoice ,deletechoice,updatechoice ,readchoice } = require('../controolers/choice');
 
 //language
@@ -17,26 +17,26 @@ router.route('/language')
     .delete(deletelanguage);
 
 //question 
-router.route('/questions')
+router.route('/language/:languageid/questions')
     .get(getquestions)
     .post(createquestions);
 
-   router.route('/questions/:questionsid')
-   .get(readquestions)
+   router.route('/language/:languageid/questions/:questionsid')
+    .get(readquestions)
     .put(updatequestions)
     .delete(deletequestions);
 
 
 //choice
 
-router.route('/choice')
+router.route('/language/:languageid/questions/:questionsid/choice')
     .get(getchoice)
-   .post(createchoice);
+    .post(createchoice);
 
- router.route('/choice/:choiceid')
+ router.route('/language/:languageid/questions/:questionsid/choice/:choiceid')
     .get(readchoice)
     .put(updatechoice)
-    .delete(deletechoice);   
+   .delete(deletechoice);   
 
 
 module.exports = router;

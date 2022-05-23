@@ -34,6 +34,6 @@ process.on('SIGINT', () => {
 });
 
 require('./language');
-require('./questions');
-require('./choice');
+//require('./questions');
+//require('./choice');
 
