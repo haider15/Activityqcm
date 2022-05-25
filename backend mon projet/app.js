@@ -3,7 +3,7 @@ var path = require('path');
 require('./models/db');
 require("body-parser");
 var logger = require('morgan');
-
+var cors = require('cors');
 var indexRouter = require('./routes/index');
 
 var app = express();
@@ -14,7 +14,7 @@ var app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.listen(3000);
 app.use('/api', indexRouter);

@@ -52,13 +52,13 @@ required:true
 
 version:{
     type :String,
-    required:true
+   
 },
 
 src:{
-    type :String,
-    required:true
+type:String
 },
+
 
 description:{
     type :String,
@@ -66,13 +66,13 @@ description:{
 },
 nbrQuestion:{
     type:Number,
-    required:true
+  
 
 },
 
 passSccore:{
     type:Number,
-    "default":70
+   
 },
 questions: [questionsSchema]
 

@@ -1,5 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { QcmService } from 'src/app/qcm.service';
+import { Language } from 'src/app/models/language.model';
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
@@ -10,17 +12,17 @@ export class CardsComponent implements OnInit {
 
 
 @Input() name:string; 
-@Input() src:string; 
-@Input() description:string;
+  @Input() description:String;
+  @Input() src:String;
 
 isReadMore = true
   
   
-  constructor() { 
+  constructor(private language:QcmService) { 
     
   }
 
-  ngOnInit() {
+  ngOnInit(){
     
   }
   showText() {
@@ -29,4 +31,15 @@ isReadMore = true
  delete(){
   console.log("delete");
 }
+
+
+
+
+
+
+
+
+
+
 }
+
