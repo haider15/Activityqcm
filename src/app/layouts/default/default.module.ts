@@ -18,7 +18,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { AddqcmComponent } from 'src/app/modules/addqcm/addqcm.component';
 import { ReponseComponent } from 'src/app/modules/reponse/reponse.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -48,7 +48,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatInputModule,
     MatListModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
+    FormsModule
+  
   ],
   providers: [
     DashboardService

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Language } from 'src/app/models/language.model';
+import { QcmService } from 'src/app/qcm.service';
 
 
 @Component({
@@ -8,13 +10,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewlangageComponent implements OnInit {
   
-  constructor() { }
+  
+  language: Language = {
+    name: '',
+    description: '',
+    src:'',
+    passSccore:'',
+    version:''
+  };
+  submitted = false;
 
-  ngOnInit() {
+
+
+  
+  constructor(private tutorialService: QcmService) { }
+
+  ngOnInit(): void {
   }
 
-  date(){
-    console.log(new Date());
+  saveTutorial(): void {
+    const data = {
+      name: this.language.name,
+      description: this.language.description,
+      src:this.language.src,
+      passSccore:this.language.passSccore,
+      version:this.language.version
+    };
+
+    this.tutorialService.create(data)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true;
+        },
+        error: (e) => console.error(e)
+      });
   }
 
+  newTutorial(): void {
+    this.submitted = false;
+    this.language = {
+      name: '',
+      description: '',
+      src:'',
+      passSccore:'',
+      version:''
+    };
+  }
+
+
+  
 }

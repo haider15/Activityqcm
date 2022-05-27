@@ -14,7 +14,8 @@ export class CardsComponent implements OnInit {
 @Input() name:string; 
   @Input() description:String;
   @Input() src:String;
-
+  @Input() passSccore:String;
+  @Input() version:String;
 isReadMore = true
   
   

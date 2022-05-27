@@ -1,15 +1,28 @@
-<button mat-icon-button>
-  <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon><a href="/newlangages">add a new
-    language</a>
-</button>
+<div class="two">
+  <a href="/newlangages" style="text-decoration: none; font-size: larger;color:blue"><button style="border-radius: 50%;" mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+  <mat-icon >add</mat-icon>
+</button> Add language </a>
+  <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+</div>
+<pre>
 
 
-<mat-grid-list cols="3" rowHeight="10:17">
-  
-  <mat-grid-tile *ngFor=" let k of carte ; let i=index;">
-    
-    <app-cards  src="{{carte[i].src}}" description="{{carte[i].description}}" name="{{carte[i].name}}"></app-cards>&nbsp;&nbsp;&nbsp;
-    
-  </mat-grid-tile>
 
-</mat-grid-list>
+</pre>
+<h6>
+  Languages
+</h6>
+<pre> </pre>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let c of carte;let i=index">
+      <div class="card mb-3" style="max-width: 540px;">
+         <a href="/posts"> <app-cards name="{{carte[i].name}}" version="{{carte[i].version}}" passSccore="{{carte[i].passSccore}}" description="{{carte[i].description}}" src="{{carte[i].src}}" >
+          </app-cards></a>
+      </div>
+  </div>
+
+</div>

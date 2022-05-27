@@ -1,25 +1,42 @@
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name" required>
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="passe sccore" required>
+<div *ngIf="!submitted">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"></label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name" required
+      [(ngModel)]="language.name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"></label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="passe sccore" required
+      [(ngModel)]="language.passSccore">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"></label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="version" required
+      [(ngModel)]="language.version">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"></label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required
+      [(ngModel)]="language.src">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label"></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description" required
+      [(ngModel)]="language.description"></textarea>
+  </div><br>
+
+
+  <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
 </div>
 
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="version" required>
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+
+<div *ngIf="submitted">
+  <button class="btn btn-success" (click)="newTutorial()">Add</button>
 </div>
 
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label"></label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description" required></textarea>
-</div><br>
 
 
-<button class="butt" mat-raised-button color="primary" type="submit">Validate&nbsp;   <mat-icon>done</mat-icon></button>
+<br>
