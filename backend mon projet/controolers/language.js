@@ -27,6 +27,7 @@ const getlanguages = (request, response) => {
 const createlanguage = (request, response) => {
 
     Cont.create({
+      
         name: request.body.name,
         src: request.body.src,
         version: request.body.version,
@@ -64,6 +65,7 @@ const updatelanguage = (request, response) => {
                     .status(400)
                     .json(error);
             }
+            
             language.name = request.body.name;
             language.version = request.body.version;
             language.src = request.body.src;

@@ -12,6 +12,7 @@ export class NewlangageComponent implements OnInit {
   
   
   language: Language = {
+    _id:'',
     name: '',
     description: '',
     src:'',
@@ -50,6 +51,7 @@ export class NewlangageComponent implements OnInit {
   newTutorial(): void {
     this.submitted = false;
     this.language = {
+      _id:'',
       name: '',
       description: '',
       src:'',

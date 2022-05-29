@@ -1,18 +1,22 @@
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name">
+  <input type="email" class="form-control" id="exampleFormControlInput1" value="{{carte.name}}"placeholder="name">
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="g">
+  <input type="email" class="form-control" id="exampleFormControlInput1" value="{{carte.passSccore}}" placeholder="passSccore">
 </div>
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label"></label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  <input type="email" class="form-control" id="exampleFormControlInput1" value="{{carte.version}}" placeholder="version">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" value="{{carte.src}}" placeholder="name@example.com" >
 </div>
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label"></label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="description"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{carte.description}}"  placeholder="description"></textarea>
 </div><br>
 <mat-accordion>
   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" hideToggle
@@ -40,7 +44,7 @@
 </mat-accordion>
 
 
-<button class="butt" mat-raised-button color="primary">edit&nbsp; <mat-icon>done</mat-icon></button>
+<button class="butt" mat-raised-button color="primary" >edit&nbsp; <mat-icon>done</mat-icon></button>
 <pre>
 
 

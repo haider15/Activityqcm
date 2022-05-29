@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Language } from 'src/app/models/language.model';
+import { Input,Output } from '@angular/core';
+import { QcmService } from 'src/app/qcm.service';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -8,6 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class EditComponent implements OnInit {
   panelOpenState = false; 
   
+  @Input() carte: Language[] = [
+  
+  ];
+
+  
+
+@Input() name:string; 
+@Input() description:String;
+@Input() src:String;
+@Input() passSccore:String;
+@Input() version:String;
+@Input() id:string;
   
  
   Questions:number[];
@@ -18,10 +32,12 @@ export class EditComponent implements OnInit {
   init=1;
  
   
-  constructor() { }
+  constructor(private language: QcmService) { }
 
   ngOnInit() {
     this.Questions=Array(1);
+    this.getlanguage();
+   
    
   }
 
@@ -34,6 +50,30 @@ export class EditComponent implements OnInit {
     this.Questions=Array(Number(n-1))
     this.init=this.init-1;
   }
+  updatelanguage(): void {
+    this.language.updatelanguage(this.id)
+      .subscribe({
+        next: (res) => {
+          console.log(res); 
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  getlanguage(): void {
+    this.language.getlanguage(this.id)
+      .subscribe({
+          next: (data) => {
+            this.carte = data;
+            console.log(data);
+          },
+          error: (e) => console.error(e)
+      });
+  }
+
+
+
+  
 
 }
 

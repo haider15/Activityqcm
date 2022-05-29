@@ -20,8 +20,8 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col" *ngFor="let c of carte;let i=index">
       <div class="card mb-3" style="max-width: 540px;">
-         <a href="/posts"> <app-cards name="{{carte[i].name}}" version="{{carte[i].version}}" passSccore="{{carte[i].passSccore}}" description="{{carte[i].description}}" src="{{carte[i].src}}" >
-          </app-cards></a>
+          <app-cards id="{{carte[i]._id}}"  src="{{carte[i].src}}" name="{{carte[i].name}}" version="{{carte[i].version}}" passSccore="{{carte[i].passSccore}} " description="{{carte[i].description}}" >
+          </app-cards>
       </div>
   </div>
 

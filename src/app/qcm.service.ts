@@ -8,6 +8,9 @@ import { Language } from './models/language.model';
   providedIn: 'root'
 })
 export class QcmService {
+  private _id(_id: any) {
+    throw new Error('Method not implemented.');
+  }
    baseUrl:String = 'http://localhost:3000/api';
   constructor(private http: HttpClient) { }
   
@@ -22,14 +25,20 @@ export class QcmService {
     return this.http.post(url, data);
   }
   
-  update(id: any, data: any): Observable<any> {
-    const url=`${this.baseUrl}/language/languageid`
-    return this.http.put(`${url}/${id}`, data);
-  }
 
-  delete(id: any): Observable<any> {
-    const url=`${this.baseUrl}/language/languageid`
-    return this.http.delete(`${url}/${id}`);
-  }
+ 
+
+ deletelanguage(id: string): Observable<any> {
+  return this.http.delete(`${this.baseUrl}/language/${id}`);
+}
+
+updatelanguage(id: string): Observable<any> {
+  return this.http.put(`${this.baseUrl}/language/${id}`);
+}
+
+getlanguage(id: string): Observable<any> {
+  return this.http.get(`${this.baseUrl}/language/${id}`);
+}
+ 
 
 }
