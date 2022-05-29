@@ -4,9 +4,11 @@ import { Observable } from 'rxjs';
 import { Language } from './models/language.model';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class QcmService {
   private _id(_id: any) {
     throw new Error('Method not implemented.');
@@ -27,18 +29,17 @@ export class QcmService {
   
 
  
-
  deletelanguage(id: string): Observable<any> {
   return this.http.delete(`${this.baseUrl}/language/${id}`);
 }
 
-updatelanguage(id: string): Observable<any> {
-  return this.http.put(`${this.baseUrl}/language/${id}`);
+updatelanguage(id: string,data: any): Observable<any> {
+  return this.http.put(`${this.baseUrl}/language/${id}`,data);
 }
 
 getlanguage(id: string): Observable<any> {
   return this.http.get(`${this.baseUrl}/language/${id}`);
 }
- 
+
 
 }

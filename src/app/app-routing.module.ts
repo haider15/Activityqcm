@@ -22,7 +22,7 @@ const routes: Routes = [{
     path: 'langages',
     component: LangagesComponent
   },{
-    path: 'edit',
+    path: 'edit/:id',
     component:EditComponent 
   },{
     path: 'addqcm',
